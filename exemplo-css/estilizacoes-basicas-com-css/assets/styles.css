@@ -1,0 +1,9 @@
+div#q2{
+    background-image: url('../excluir.png'), linear-gradient(to bottom, blue, red);
+    background-size: contain;
+}
+
+div#q3{
+    background-image: url('../azazel.gif');
+    background-size: cover; 
+}
