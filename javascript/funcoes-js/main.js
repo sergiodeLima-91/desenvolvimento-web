@@ -83,3 +83,17 @@ function classificarImc(imc) {
 })(); // <-----
 
 //É possível até mesmo retirar o nome da função "main" que antecede o parêntese sem afetar a execução dela. Isso porque ela está referenciada nos parênteses seguintes mostrados na seta. Isso é feito para ISOLAR O CÓDIGO E/OU O ESCOPO DA FUNÇÃO.
+
+//=== ARROW FUNCTIONS:
+// Sintaxe: () => {}
+// Arrow (seta) Functions são uma maneira mais elegante e sucinta de escrever funções! 
+/** Exemplo de uma função de boas vindas: */
+function boasVindas(nome) {
+    return `Seja bem-vindo, (a) ${nome}!`
+}
+
+const meuNome = 'Sérgio'
+console.log(`Retornando função com sintaxe normal: ${boasVindas(meuNome)}`)
+// Agora vamos usar com Arrow Functions e veremos que ficará numa linha de código só:
+const boasVindasAf = nome => `Seja bem-vindo (a), ${nome}!`
+console.log(`Retornando Arrow Function: ${boasVindasAf(meuNome)}`) 
