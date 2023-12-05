@@ -38,3 +38,55 @@ for (let indice = 0; indice < nomeCompleto.length; indice++){
 }
 
     // Como depurar o código?
+
+// ==================== MANIPULAÇÃO DE LISTAS ====================
+    //Foreach: (sintaxe reduzida do FOR convencional. Ele é mais lento que o FOR e deve-se tomar cuidado com ele!)
+const lista = [1,2,3,4,5,6,7,8,9,10]
+
+lista.forEach((value, index, listRef) => {
+console.log(`Valor no índice: ${value}, Índice: ${index}, Toda a lista: ${listRef}`) // Callback = função dentro de outra função.
+})
+    //Filter:
+    // Recebe espécie de função de JULGAMENTO. Filter cria nova lista (nesse caso), devolve uma nova lista contendo só o que foi FILTRADO.
+const listaDeNumerosPares = lista.filter((element, index, listRef) => {
+    return (element % 2 === 0) // Está filtrando os números da lista e percorrendo para ver quantos deles têm resto da divisão igual a zero.
+})
+
+console.log(listaDeNumerosPares)
+    //Map:
+class Pessoas {
+    constructor(name) {
+        this.name = name
+    }
+}
+const listaDePessoas = [new Pessoas('Joana'), new Pessoas('José'), new Pessoas('Jiraya'), new Pessoas('Jurema')]
+
+console.log(listaDePessoas)
+// E se eu quiser converver esta lista em uma lista de nomes?
+
+const listaNomes = listaDePessoas.map((element) => element.name) // Converta o element no nome dele!
+
+console.log(listaNomes)
+
+// E se eu quisesse converter os nomes em HTML?
+const listaHTML = listaDePessoas.map((element) => {
+    return `
+        <li>
+            ${element.name}
+        </li>
+    `
+})
+
+console.log(listaHTML)
+    // Reduce:
+    //Reduzir a lista num único valor percorrendo cada valor dela.
+const somaDeTodosOsNumeros = lista.reduce((previous, current) => {
+    return previous + current
+})
+
+console.log(somaDeTodosOsNumeros)
+
+    //Join e Combinação de Funções de Manipulação
+//"Join" = juntar com um separador e transformar a lista numa string.
+const cargosDaEmpresa = ['mecânico', 'gerente','auxiliar administrativo', 'supervisor']
+console.log(cargosDaEmpresa.join(' - '))
